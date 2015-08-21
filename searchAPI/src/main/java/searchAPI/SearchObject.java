@@ -51,20 +51,7 @@ public class SearchObject {
 	
 }
 
-/*public static int CheckLink(String URLName){
-try {
-    HttpURLConnection.setFollowRedirects(true);
-    HttpURLConnection con = (HttpURLConnection) new URL(URLName).openConnection();
-    con.setRequestMethod("GET");
-    
-    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-	String inputLine;
-	StringBuffer response = new StringBuffer();
-
-	while ((inputLine = in.readLine()) != null) {
-		response.append(inputLine);
-	}
-	in.close();
+/* **** Navigation *****
 	
 	JSONObject obj = new JSONObject(response.toString());
 	
@@ -74,34 +61,16 @@ try {
 	
 	System.out.println(obj.toString(3));
 	
-	//System.out.println("\n\n");
-	
 	String i = result1.getString("country");
-	//System.out.println(i);
-	
 	
 	for(String a : obj.keySet()) {
-		//System.out.println(a);
+		System.out.println(a);
 	}
 	
-	//JSONArray results = new JSONArray(obj.getJSONArray("results"));
-	//System.out.println(results.toString(3));
+	JSONArray results = new JSONArray(obj.getJSONArray("results"));
+	System.out.println(results.toString(3));
 	
-	
-	//JSONObject result1 = new JSONObject(results.get(0));
-	
-	//System.out.println(result1.toString(3));
-	
-	
-	
-	//System.out.println(obj.toString(3));
-    
-    
-    return con.getResponseCode();
-}
-catch (Exception e) {
-    //e.printStackTrace();
-    return 0;
-}
-}*/
+	JSONObject result1 = new JSONObject(results.get(0));
+
+*/
 
