@@ -3,4 +3,12 @@
   <groupId>com</groupId>
   <artifactId>searchAPI</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+
+ <dependencies>
+	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20141113</version>
+	</dependency>
+</dependencies>
 </project>
