@@ -12,23 +12,25 @@ public class CountryTests {
 	
 	@Test
 	public void test1() {
-		SearchObject request = new SearchObject("https://itunes.apple.com/search?term=abba&country=uk");
-		assertEquals("Verify response code is 200", request.responseCode, 200);
+		SearchObject request = new SearchObject("https://itunes.apple.com/search?term=abba");
+		assertEquals("Verify response code is 200", 200, request.responseCode);
 	}
 	
 	@Test
 	public void test2() {
-		SearchObject request = new SearchObject("https://itunes.apple.com/search?term=abba&limit=1");
-		//JSONObject obj = new JSONObject(response.toString());
+		SearchObject request = new SearchObject("https://itunes.apple.com/search?term=abba&limit=10");
 		
-		//JSONArray results = (JSONArray) request.get("results");
-		//JSONObject result1 = (JSONObject) results.get(0);
-		//String i = result1.getString("country");
-		//assertEquals("Verify default country is US", i, "US");
+		JSONArray results = (JSONArray) request.response.get("results");
+		
+		for(int i = 0; i < results.length(); i++) {
+			JSONObject eachResult = (JSONObject) results.get(i);
+			String country = eachResult.getString("country");
+			assertEquals("Verify default country is US", "USA", country);
+		}
 	}
 	
 	@Test
 	public void test3() {
-		
+
 	}
 }
