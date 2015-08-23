@@ -7,11 +7,6 @@ import org.junit.Test;
 
 public class LimitTests {
 	
-	@BeforeClass
-	public static void beforeClass() {
-		SearchObject request = new SearchObject("https://itunes.apple.com/search?term=abba");
-		assertEquals("Verify default limit is 50", 50, request.resultCount);
-	}
 	
 	@Test
 	public void test1() {
@@ -30,4 +25,11 @@ public class LimitTests {
 		SearchObject request = new SearchObject("https://itunes.apple.com/search?term=abba&limit=1");
 		assertEquals("Verify requested number of results returned", 1, request.resultCount);
 	}
+	
+	@Test
+	public void Test4() {
+		SearchObject request = new SearchObject("https://itunes.apple.com/search?term=abba");
+		assertEquals("Verify default limit is 50", 50, request.resultCount);
+	}
+	
 }
