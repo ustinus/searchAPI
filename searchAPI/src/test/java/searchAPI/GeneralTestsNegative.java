@@ -1,14 +1,12 @@
 package searchAPI;
 
-import org.junit.BeforeClass;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class GeneralTestsNegative {
 	
-	@BeforeClass
-	public static void beforeClass() {
-		
-	}
+	
 	
 	@Test
 	public void test1() {

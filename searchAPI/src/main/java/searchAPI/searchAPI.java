@@ -2,7 +2,7 @@ package searchAPI;
 
 public class searchAPI {
 
-	public static String url = "https://itunes.apple.com/search?term=abba&limit=1&country=gb";
+	public static String url = "https://itunes.apple.com/search?term=abba&limit=1&media=tvShow";
 	
 	public static void main(String[] args) {
 		

@@ -5,8 +5,6 @@ import org.junit.Test;
 
 public class CountryTests {
 
-	public static String url = "https://itunes.apple.com/search?term=abba&limit=1&country=uk";
-
 	@Test
 	public void testDefaultCountry() {
 		SearchObject request = new SearchObject("https://itunes.apple.com/search?term=abba&limit=10");
