@@ -1,11 +1,8 @@
 package searchAPI;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 public class searchAPI {
 
-	public static String url = "https://itunes.apple.com/search?term=abba&limit=1&country=uk";
+	public static String url = "https://itunes.apple.com/search?term=abba&limit=1&country=gb";
 	
 	public static void main(String[] args) {
 		
@@ -14,8 +11,6 @@ public class searchAPI {
 		System.out.println(request.resultCount);
 		System.out.println(request.responseCode);
 		System.out.println(request.response.toString(3));
-		
-		
-		
+			
 	}
 }

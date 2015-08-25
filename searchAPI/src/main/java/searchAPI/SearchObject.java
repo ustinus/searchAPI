@@ -4,13 +4,16 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class SearchObject {
 	public JSONObject response;
 	public int responseCode, resultCount;
-
+	public ArrayList<String> countryArrayList = new ArrayList<String>();
+	
 	SearchObject(String url) {
 		this.response = getResponse(url);
 	}
@@ -31,7 +34,14 @@ public class SearchObject {
 				}
 				in.close();
 				JSONObject obj = new JSONObject(response.toString());
-				resultCount = (Integer) obj.get("resultCount");	
+				resultCount = (Integer) obj.get("resultCount");
+				
+				JSONArray results = (JSONArray) obj.get("results");
+				for (int i = 0; i < results.length(); i++) {
+					JSONObject eachResult = (JSONObject) results.get(i);
+					String country = eachResult.getString("country");
+					countryArrayList.add(country);
+				}
 				return obj;
 			} 
 		} catch (Exception e) {
@@ -40,42 +50,6 @@ public class SearchObject {
 		JSONObject obj = new JSONObject("{'EMPTY RESPONSE':0}");
 		return obj;
 	}
-
-	
-
 }
 
-/*
- * public int getResultsCount() {
-		int count;
-		if(responseCode == 200) {
-			count = (Integer) response.get("resultCount");
-		} else {count = 0;}
-		
-		return count;
-	}
- * 
- * 
- * 
- * 
- * 
- * **** Navigation *****
- * 
- * JSONObject obj = new JSONObject(response.toString());
- * 
- * JSONArray results = (JSONArray) obj.get("results");
- * 
- * JSONObject result1 = (JSONObject) results.get(0);
- * 
- * System.out.println(obj.toString(3));
- * 
- * String i = result1.getString("country");
- * 
- * for(String a : obj.keySet()) { System.out.println(a); }
- * 
- * JSONArray results = new JSONArray(obj.getJSONArray("results"));
- * System.out.println(results.toString(3));
- * 
- * JSONObject result1 = new JSONObject(results.get(0));
- * 
- */
+
