@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 public class searchAPI {
 
-	public static String url = "https://itunes.apple.com/search?term=abba&limit=1&media=music";
+	public static String url = "https://itunes.apple.com/search?term=abba&limit=1&country=uk";
 	
 	public static void main(String[] args) {
 		
