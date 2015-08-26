@@ -45,7 +45,7 @@ public class SearchObject {
 				return obj;
 			} 
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 		JSONObject obj = new JSONObject("{'EMPTY RESPONSE':0}");
 		return obj;
